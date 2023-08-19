@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'; // Importing FontAweso
 import Settings from '../pages/settings';
 import {StyleSheet,Text,View,ScrollView} from 'react-native';
 import Home from '../pages/home';
+import CreateNews from '../pages/create-news';
 
 const Tab = createBottomTabNavigator();
 
@@ -50,7 +51,7 @@ export default function BottomTabNavigator() {
       {/* <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Settings" component={SettingsScreen} /> */}
        <Tab.Screen name="Home" component={Home}/>
-       <Tab.Screen name="Create" component={Settings} />
+       <Tab.Screen name="Create" component={CreateNews} />
       <Tab.Screen name="Settings" component={Settings} />
     </Tab.Navigator>
   );
