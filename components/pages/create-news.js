@@ -1,6 +1,7 @@
 import {ScrollView, StyleSheet,Text,View,TextInput,SafeAreaView,Button,Image} from 'react-native';
 import React, { useState } from 'react';
 import * as ImagePicker from 'expo-image-picker';
+import axios from 'axios';
 
 
 export default function CreateNews() {
@@ -14,22 +15,36 @@ export default function CreateNews() {
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
       aspect: [4, 3],
-      quality: 1,
+      quality: 0.1,           // Compress the image (0: lowest quality, 1: highest quality)
+      base64: true            // Return the image in base64 format
     });
 
-    console.log(result);
-
     if (!result.canceled) {
-      setImage(result.assets[0].uri);
+      setImage(`data:image/png;base64,${result.assets[0].base64}`);
     }
   };
 
- const createPost = ()=>{
-
+ const createPost = async ()=>{
     const payload = {
         image:image,
-        description:text
+        description:text,
+        name:'samuel',
+        role:"author"
     }
+    try {
+      let res = await axios.post('http://192.168.1.38:3000/create', payload);
+      console.log(res.data);
+      if(res.data.code===0){
+        alert("Something went wrong");
+        return
+      }
+        
+      setImage("");
+      onChangeText("");
+  } catch (err) {
+      console.error(err);
+      alert("someting went wrong")
+  }
   }      
         return (
     <ScrollView>

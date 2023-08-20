@@ -3,7 +3,6 @@ import Icon from 'react-native-vector-icons/FontAwesome'; // Importing FontAweso
 import React, { useState,useEffect } from 'react';
 
 const CardComponent = ({cardData}) => {
-console.log(cardData);
 
 const [isExpanded, setIsExpanded] = useState(false);
 const [cardInfo, setCardInfo] = useState([]);
@@ -22,7 +21,7 @@ return  `${text?.substring(0, 50)}...`;
     <View key={index} style={styles.card}>
         
       <View style={styles.header}>
-        <Image source={{ uri: cardInfo.profile_pic }} style={styles.profilePic} />
+        <Image source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }} style={styles.profilePic} />
         <View style={styles.nameRoleContainer}>
           <Text style={styles.name}>{cardInfo.name}</Text>
           <Text style={styles.role}>{cardInfo.role}</Text>
