@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 16,
     fontWeight: 'bold',
+    fontFamily:'Poppins'
   },
   role: {
     fontSize: 14,

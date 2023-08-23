@@ -52,7 +52,9 @@ export default function Login() {
       fontSize: 24,
       fontWeight: 'bold',
       color: '#333',
-      marginBottom:15
+      marginBottom:15,
+      fontFamily:'Poppins'
+
     },
     sub: {
         marginTop:8,

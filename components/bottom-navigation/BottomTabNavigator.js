@@ -7,13 +7,12 @@ import Settings from '../pages/settings';
 import {StyleSheet,Text,View,ScrollView} from 'react-native';
 import Home from '../pages/home';
 import CreateNews from '../pages/create-news';
-
+import { AntDesign } from '@expo/vector-icons';
 const Tab = createBottomTabNavigator();
 
 export default function BottomTabNavigator() {
   return (
     <Tab.Navigator 
-    style ={styles.nav}
       initialRouteName="Home"
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
@@ -22,13 +21,15 @@ export default function BottomTabNavigator() {
           if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home';
           } else if (route.name === 'Create') {
-            iconName = focused ? 'plus-circle' : 'plus-circle';
+            iconName = focused ? 'pluscircle' : 'pluscircleo';
           }
           else if (route.name === 'Settings') {
-            iconName = focused ? 'gear' : 'gear';
+            iconName = focused ? 'setting' : 'setting';
           }
 
-          return <Icon name={iconName} size={size} color={color} />;
+          // return <Icon name={iconName} size={size} color={color} />;
+          return <AntDesign name={iconName} size={size} color={color} />;
+
         },
         tabBarActiveTintColor:'#1877F2',
         tabBarInactiveTintColor:'grey',
@@ -36,7 +37,7 @@ export default function BottomTabNavigator() {
             borderRadius:10,
             margin:10,
             paddingBottom:4,
-            paddingTop:3
+            paddingTop:6
         },
         headerStyle: {
             backgroundColor: '#1877F2',
@@ -58,8 +59,5 @@ export default function BottomTabNavigator() {
 }
 
 const styles = StyleSheet.create({
-    nav: {
-    padding:8
-    }
   
   });
