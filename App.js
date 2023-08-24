@@ -27,7 +27,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    fontFamily:''
   },
   header: {
     // give it a fixed height or any other styling you want

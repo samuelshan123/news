@@ -1,20 +1,16 @@
-import {StyleSheet,Text,View} from 'react-native';
-import React, { useState } from 'react';
-
+import { StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
 
 export default function Settings() {
-
-    return ( 
-        <View style = {
-            styles.head
-        } >
+  return (
+    <View style={styles.head}>
       <Text>Hello</Text>
-        </View>
-    );
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    head: {
-        margin: 10
-    },
+  head: {
+    margin: 10,
+  },
 });

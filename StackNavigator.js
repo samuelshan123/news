@@ -38,7 +38,6 @@ export default function StackNavigator() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    fontFamily:''
   },
   header: {
     // give it a fixed height or any other styling you want
